@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./javascripts/market.js" defer></script>
+    <title>Market - Contact Seller</title>
+</head>
+<body>
+    <div id="app">
+        <div class = "site-content">
+            <div id="title-header">
+                <header>
+                    <h1>Online Bookstore</h1>
+                    <div class="buttons">
+                        <button id="messages-button" type="button" @click="openMessages">Messages</button>
+                        <button type="button">Signup</button>
+                        <button type="button">Login</button>
+                        <button type="button">Logout</button>
+                    </div>
+                </header>
+            </div>
+            <div id="message-modal" v-show="showPopUp" class="modal">
+                <div class="modal-content">
+                    <span class="close" @click="closeModal">&times;</span>
+                    <ul id="message-list">
+                        <li v-for="message in messages" :key="message.id">{{message.message}}<br>
+                            from: {{message.buyer_first_name}} {{message.buyer_last_name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="seller-banner" class="seciton">
+                <h3>Welcome to {{seller}}'s Store Page!</h3>
+            </div>
+            <div id="main">
+                <section class="section">
+                    <h2>Books Available for sale</h2>
+                    <ul id="book-list" >
+                        <li v-for="book in books" @click="writeTitle(book.title, book.price, book.seller_first_name)" class="book-item">
+                            <span><Strong>Title:</Strong> {{book.title}}</span><br>
+                            <span><Strong>Author:</Strong> {{book.author_first_name}} {{book.author_last_name}}</span><br>
+                            <span><Strong>ISBN:</Strong> {{book.ISBN}}</span><br>
+                            <span><Strong>Price:</Strong> ${{book.price}}</span><br>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Contact Seller</h2>
+                    <form id="contact-seller-form" onsubmit="sendMessage(event)" action="/contact" method="POST">
+                        <input type="hidden" name="seller_id" value="seller_id">
+                        <label for="message">Message: </label>
+                        <textarea id="message" name="message" rows="5" cols="50" placeholder="Write your message to the seller here!" v-model="message"></textarea>
+                        <button class="send-button" type="submit">Send Message</button>
+                        <div id="message-sent"></div>
+                    </form>
+                </section>
+                <footer>
+                    <h3>Online Bookstore</h3>
+                    <p>Made by Kai Koo</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ligula augue, placerat nec sagittis at, finibus in ex. Donec sed orci ligula.
+                        Vestibulum sollicitudin porttitor purus, sed eleifend elit feugiat a. Aenean luctus facilisis elit, id mollis eros viverra sed. Phasellus quis
+                        luctus sem, quis rutrum ligula. In vel est ac arcu fermentum imperdiet. Pellentesque non turpis arcu. Etiam aliquet quam vel rutrum dictum.
+                    </p>
+                    <div id="div-nav-footer">
+                        <ul id="nav-footer">
+                            <li><a href='#'>facebook</a></li>
+                            <li><a href='#'>instagram</a></li>
+                            <li><a href='#'>twitter</a></li>
+                            <li><a href='#'>blog</a></li>
+                            <li><a href='#'>telegram</a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

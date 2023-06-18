@@ -1,0 +1,266 @@
+*
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #444e5f !important;
+  color: white !important;
+  margin-top: 25px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header
+{
+  background-color: #444e5f !important;
+  border-top: 3px solid white;
+  width: 100vw;
+  padding: 0.5em 1em;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1
+{
+  margin: 0;
+}
+
+header .buttons
+{
+  display: flex;
+  gap: 15px;
+}
+.section
+{
+  margin-top:70px;
+}
+
+#main
+{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 75vh;
+
+  margin: 0;
+  padding: 0;
+}
+
+section
+{
+  text-align:center;
+  margin-bottom: 20px;
+}
+
+ul
+{
+  list-style: none;
+  padding:0;
+}
+
+li
+{
+  margin-bottom:10px;
+}
+
+form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label
+{
+  margin-bottom: 10px
+}
+
+textarea
+{
+  resize: veritcal;
+  margin-bottom: 25px;
+}
+
+button
+{
+  margin-top: 10px;
+  background-color: white;
+  border: hidden;
+  border-radius: 0.3em;
+  padding: 0.6em;
+  color: black;
+}
+
+section:nth-child(1)
+{
+  margin-bottom: auto;
+}
+
+#book-list
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#book-list li
+{
+  flex: 0 0 calc(18% - 20px);
+  border: 1px solid black;
+  padding: 10px;
+  margin: 7px;
+}
+
+.book-item:hover
+{
+  cursor: pointer;
+}
+
+#seller-banner
+{
+  text-align: center;
+  margin-top: 70px;
+}
+
+#message-sent
+{
+  color: rgb(9, 228, 9);
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 15px;
+  display: none;
+  margin-bottom: 0;
+}
+
+.modal
+{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content
+{
+  background-color: #fff;
+  width: 400px;
+  max-height: 300px;
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  color:black;
+  overflow-y: auto;
+}
+
+.close
+{
+  color: #aaa;
+  float:right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.close:hover
+{
+  color: black;
+}
+
+footer
+{
+  padding: 0.5em;
+  background-color: whitesmoke;
+  color: black;
+  text-align: left;
+  margin-bottom: 0;
+  min-height:30vh;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+footer h4
+{
+  font-size: 1rem;
+  color: black;
+}
+
+button
+{
+  cursor: pointer;
+}
+
+button.send-button
+{
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+ul#book-list
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body, html, #app
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+#app
+{
+  flex: 1 0 auto;
+}
+
+.site-content
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-footer li
+{
+  display: inline;
+  margin-right: 1.5em;
+}
+
+#nav-footer li a
+{
+  color:black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav-footer li a:hover
+{
+  color: lightgrey;
+}
+
+#div-nav-footer
+{
+  margin-top: 3.5em;
+}
