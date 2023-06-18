@@ -31,7 +31,7 @@ Steps to run on unix-like system:
         or
 
         $ mysql < schema_implementation.sql
-        $ mysql < dump.sql
+        $ mysql < queries.sql
     
     3. start mySQL database
 
